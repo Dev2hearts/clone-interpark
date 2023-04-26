@@ -1,0 +1,1030 @@
+@charset "utf-8";
+@import url("font.css");
+* {
+  margin: 0;
+  padding: 0;
+  /* 보더박스 적용 */
+  box-sizing: border-box;
+  outline-style: none;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #000;
+  border: none;
+  text-decoration: none;
+}
+img {
+  vertical-align: middle;
+  border: 0;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #000;
+  letter-spacing: -0.64px;
+  word-break: keep-all;
+}
+/* 공통클래스 */
+.inner {
+  display: block;
+  position: relative;
+  width: 128rem;
+  /* width: 1280px; */
+  margin: 0 auto;
+}
+.clearfix::after {
+  display: block;
+  position: relative;
+  content: "";
+  width: 100%;
+  clear: both;
+}
+/* swiper 머튼 */
+.sw-bt {
+  position: absolute;
+  top: 50%;
+  z-index: 99;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 0.1rem rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.13);
+  font-size: 0;
+  cursor: pointer;
+}
+.sw-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  z-index: 99;
+}
+.sw-prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+.sw-bt::before {
+  display: block;
+  position: absolute;
+  top: calc(50% - 0.8rem);
+  left: calc(50% - 0.4rem);
+  content: "";
+  width: 0.8rem;
+  height: 1.6rem;
+  background: url("../images/slider_arrow.svg") no-repeat center;
+}
+.sw-prev::before {
+  /* 좌표 및 크기를 변경하지 않고 */
+  /* 눈에 보이는 것들만 표현한다 */
+  transform: scaleX(-100%);
+}
+/* section 내용 구조*/
+.section-top {
+  text-align: center;
+}
+.section-top > h2 {
+  font-size: 2.8rem;
+  line-height: 3.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.section-top > p {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  padding-bottom: 2.2rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.section-top .btns {
+  /* inline-block은 html 코드의 Enter도 글자로 인식 한다. */
+  /* 그래서 공백글자가 들어간다. */
+  margin-bottom: 2.5rem;
+  font-size: 0;
+}
+.bt-link-shop {
+  /* 만약 block 이면 width 를 주고, margin: 0 auto; */
+  /* inline-block 이므로 글자 처럼 text-align:center; */
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 5.6rem;
+  padding: 0 4rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 2.8rem;
+  color: #333;
+  font-weight: 700;
+}
+.bt-link-shop::after {
+  display: inline-block;
+  position: relative;
+  content: "";
+  margin-left: 0.3rem;
+  width: 0.7rem;
+  height: 1.1rem;
+  background: url("../images/icon_linkArrow.svg") no-repeat center;
+}
+
+.section-top .btns a {
+  display: inline-block;
+  border-radius: 2rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  padding: 0 2rem;
+  line-height: 4.2rem;
+  font-size: 1.4rem;
+  color: #111;
+  background: #fff;
+  margin-right: 0.6rem;
+}
+.section-top .btns a:last-child {
+  margin-right: 0;
+}
+.btns-active {
+  display: block;
+  background: #111 !important;
+  color: #fff !important;
+}
+
+.section-slide {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.section-bottom {
+  text-align: center;
+}
+/* 플라잉 배너 */
+.fix-banner {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  text-align: center;
+  z-index: 9999;
+}
+.fix-banner a {
+  display: block;
+}
+.fix-banner button {
+}
+.gotop {
+  display: inline-block;
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  border: 0.1rem solid rgba(0, 0, 0, 0.15);
+  background: #fff url("../images/btn_topArrow.svg") no-repeat center;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.16);
+  font-size: 0;
+  margin-top: 1rem;
+}
+/* 기본레이아웃 */
+.wrap {
+}
+/* 상단 */
+.header {
+  z-index: 999999;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
+}
+.header .inner {
+  padding-top: 3rem;
+  height: 16rem;
+}
+.header-up {
+  /* margin-top: 3rem; */
+}
+.header-left {
+  position: relative;
+  /* 자식들이 모두 absoluter 라서. */
+  /* width, height 준다 */
+  width: calc(11.8rem + 45.5rem + 2rem);
+  height: 5rem;
+
+  float: left;
+}
+.logo {
+  /* a 태그는 inline 이므로 widrth, height 안됨 */
+  /* a 태그는 inline 이므로 margin, padding 일부 안됨 */
+  /* a 태그는 inline 이므로 최소 inline-block 으로 */
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 11.1rem;
+  height: 5rem;
+  background: url("../images/logo.svg") no-repeat center;
+  background-size: contain;
+}
+.search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45.5rem;
+  height: 5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 0px 15px;
+}
+.search-text {
+  width: calc(100% - 2.5rem);
+  height: 5rem;
+  border: 0;
+  padding-right: 3rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.search-text::placeholder {
+  color: #a2a2a2;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.search-bt {
+  width: 1.7rem;
+  height: 1.7rem;
+  background: url("../images/btn_search.svg") no-repeat center;
+  border: 0;
+  cursor: pointer;
+  /* 조건: inline or inline-block */
+  vertical-align: -0.3rem;
+}
+.search-reset {
+  position: absolute;
+  top: calc(50% - 0.8rem);
+  /* line-height: 5rem; */
+  right: 5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url("../images/btn_searchDelete.svg") no-repeat center;
+  border: 0;
+  font-size: 0;
+  cursor: pointer;
+}
+.header-right {
+  float: right;
+}
+.member-list {
+  margin-top: 1.7rem;
+  /* padding-top: 1.7rem; */
+  /* line-height: 5rem; */
+}
+.member-list > li {
+  position: relative;
+  float: left;
+  margin-right: 2rem;
+}
+.member-list > li:last-child {
+  margin-right: 0;
+}
+.member-list > li > a {
+  font-size: 1.5rem;
+  color: #111;
+  font-weight: 500;
+}
+.icon-arrow::after {
+  display: inline-block;
+  position: relative;
+  content: "";
+  width: 0.8rem;
+  height: 0.5rem;
+  background: url("../images/arrow_pc.svg") no-repeat center;
+  vertical-align: 0.2rem;
+  margin-left: 0.5rem;
+}
+.mypage-bt:hover .mypage {
+  display: block;
+}
+.mypage {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1.3rem;
+  box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2);
+}
+.mypage-list li {
+  margin: 1rem 0;
+}
+.mypage-list li:first-child {
+  margin-top: 0;
+}
+.mypage-list li:last-child {
+  margin-bottom: 0;
+}
+.mypage-list li a {
+  /* 글자 줄내림 없다 */
+  /* inline 은 한줄로 배치 */
+  white-space: nowrap;
+  font-size: 1.4rem;
+}
+.mypage-list li a b {
+  font-weight: 500;
+}
+
+.header-down {
+}
+
+/* 슬라이드 */
+.service-list {
+  float: left;
+}
+.service-list li {
+  float: left;
+  padding-right: 2rem;
+  margin-top: 3rem;
+}
+.service-list li:last-child {
+  padding-right: 0;
+  margin-right: 1.5rem;
+}
+.service-list li a {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 600;
+  line-height: 3rem;
+}
+.service-list li a img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.5rem;
+}
+.service-menu {
+}
+.service-menu li {
+  float: left;
+  margin-top: 3rem;
+}
+.service-menu li a {
+  display: inline-block;
+  position: relative;
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: 600;
+  line-height: 3rem;
+  padding: 0 1.2rem;
+}
+.service-menu li a::before {
+  display: block;
+  position: absolute;
+  /* top: 0; */
+  top: calc(50% - 0.8rem);
+  left: 0;
+  content: "";
+  width: 0.1rem;
+  height: 1.6rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+/* 추천 이벤트 */
+.promotion {
+  padding-top: 3rem;
+  padding-bottom: 9rem;
+}
+.promotion .inner {
+  height: 100%;
+}
+.promotion-slide {
+  height: 100%;
+}
+.sw-promotion a {
+  display: inline-block;
+  border-radius: 1.3rem;
+  overflow: hidden;
+}
+.sw-promotion a img {
+  width: 100%;
+  height: auto;
+}
+
+/* 쇼핑추천 */
+.shopping {
+  padding-top: 3rem;
+  padding-bottom: 9rem;
+}
+.shopping .section-slide {
+  height: 40.5rem;
+}
+
+.sw-shopping {
+  height: 100%;
+}
+
+.good {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  background: #eeeeee;
+  text-align: center;
+  overflow: hidden;
+}
+.good > img {
+  width: 100%;
+  /* 배경색이 mix blend 되므로 색상이 섞인다. */
+  /* multply 는 흰색을 투명하게 한다. */
+  /* 자주사용하지 않는다. */
+  /* 포타샵 처럼 이미지 */
+  mix-blend-mode: multiply;
+}
+.good-info {
+  background: #fff;
+  text-align: left;
+  padding: 2rem;
+}
+.good-info-list {
+}
+.good-info-list li {
+}
+.good-info-list li b {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #111;
+  font-weight: 700;
+}
+.good-info-list li b span {
+  color: #ef3e43;
+}
+.good-info-list li p {
+  /* 3. display: -webkit-box */
+  display: -webkit-box;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  color: #111;
+  margin-top: 1rem;
+
+  /* 내용이 1줄일 수도 있고 최대 2줄이다 = 높이값 지정 */
+  /* 높이 값을 지정 해서 레이아웃을 지킨다. */
+  /* 내용이 넘치는 경우 ... 처리 */
+  /* 카페 참조. 2줄 말줄임 */
+  /* 1. 높이가 있어야 합니다. */
+  height: 3.6rem;
+  /* 2. 넘치는 영역을 가린다 */
+  overflow: hidden;
+  /* 4. text-overflow: elopsos */
+  text-overflow: ellipsis;
+  /* 5. 아래 코드 입력한다. */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/* 투어특가 */
+/* 투어특가 */
+.tour {
+  padding-top: 3rem;
+  padding-bottom: 9rem;
+}
+
+.tour .section-slide {
+  height: 35.5rem;
+}
+.sw-tour {
+  height: 100%;
+}
+.tour-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.tour-img {
+  position: relative;
+  width: 100%;
+  height: 24.5rem;
+  overflow: hidden;
+}
+.tour-img img {
+  /* absoulute 를 영역 중앙에 배치 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 좌표, 영역말고 내용 즉, 보이는 부분만 이동 */
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.tour-info {
+  padding: 2rem;
+  background: #fff;
+}
+.tour-info-list {
+}
+.tour-info-list li {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.tour-cate {
+  display: inline-block;
+  position: absolute;
+  top: -3.9rem;
+  left: 0;
+  background: #4a95ff;
+  font-size: 1.4rem;
+  line-height: 3.2rem;
+  color: #fff;
+  font-weight: 700;
+  padding: 0 1rem;
+  border-radius: 0.3rem;
+}
+.tour-title {
+  /* 1줄 말줄임 ... */
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  color: #4a95ff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tour-place {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tour-price {
+  color: #111;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+.tour-price b {
+  font-weight: 700;
+  font-size: 2rem;
+}
+/* 티켓랭킹 */
+.ticket {
+  padding-top: 3rem;
+  padding-bottom: 9rem;
+}
+.ticket .section-slide {
+  height: 54rem;
+}
+.ticket .section-slide .sw-bt {
+  top: 35%;
+}
+.sw-ticket {
+  height: 100%;
+}
+.ticket-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ticket-img {
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.ticket-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.ticket-rank {
+  position: absolute;
+  bottom: 3rem;
+  left: 2.5rem;
+  font-size: 7rem;
+  color: #fff;
+  font-weight: 700;
+  z-index: 1;
+}
+.ticket-img::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)),
+    linear-gradient(180deg, transparent 68.5%, rgba(0, 0, 0, 0.6));
+}
+.ticket-info {
+  padding: 2rem 1rem;
+  background: #fff;
+}
+.ticket-info-list {
+}
+.ticket-info-list li {
+  margin-bottom: 0.5rem;
+}
+
+.ticket-info-list li:first-child {
+  margin-bottom: 0rem;
+}
+.ticket-title {
+  /* 2줄 ... 처리 */
+  display: -webkit-box;
+  color: #111;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  font-weight: 700;
+  height: 4.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.ticket-hall {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  columns: #666;
+  /* 1줄 ... 처리 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ticket-date {
+  display: block;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: #999;
+}
+.ticket-sale {
+  display: inline-block;
+  line-height: 2.4rem;
+  font-size: 1.1rem;
+  padding: 0 0.8rem;
+  color: #ef3e43;
+  border: 0.1rem solid rgba(239, 62, 67, 0.3);
+  border-radius: 0.3rem;
+}
+/* 인터파크 라이브 */
+.live {
+  padding-top: 3rem;
+  padding-bottom: 9rem;
+}
+.live .section-top {
+  margin-bottom: 2.5rem;
+}
+.live .section-slide {
+  height: 45.5rem;
+}
+.sw-live {
+  height: 100%;
+}
+.live-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.live-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: pink;
+}
+
+.live-img img {
+  /* 이미지 너비 높이 상관 없이 가운데 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+.live-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+}
+.live-info-top {
+}
+.live-info-cate {
+  display: inline-block;
+  line-height: 3.2rem;
+  font-size: 1.3rem;
+  border-radius: 1.6rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0 1.2rem;
+  margin-bottom: 1rem;
+}
+.live-info-title {
+  display: -webkit-box;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  /* 2줄 말줄임 출력 */
+  height: 4.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 700;
+  color: #fff;
+}
+.live-info-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+.live-info-date {
+  color: #fff;
+  font-size: 2.8rem;
+  line-height: 3.3rem;
+  margin-bottom: 0.5rem;
+}
+.live-info-time {
+  color: #fff;
+  font-size: 5rem;
+  line-height: 6rem;
+  font-weight: 700;
+}
+.live-info-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 2rem;
+}
+.live-info-thumb {
+  position: relative;
+  float: left;
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+.live-info-thumb img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+.live-info-desc {
+  float: right;
+  width: calc(100% - 6.5rem - 1rem);
+}
+.live-info-desc-title {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  color: #fff;
+  /* 1줄 말줄임 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 1rem;
+}
+.live-info-desc-price {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+}
+.live-info-desc-price em {
+  color: #ef3e43;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  font-style: normal;
+}
+.live-info-desc-price b {
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+}
+
+/* 오늘의 도서 */
+.books {
+  padding-top: 3rem;
+  padding-bottom: 9rem;
+}
+.books .section-slide {
+  height: 40rem;
+}
+.sw-books {
+  height: 100%;
+}
+.books-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.books-img {
+  position: relative;
+  width: 100%;
+  height: 33.5rem;
+  overflow: hidden;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+.books-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.books-info {
+  text-align: center;
+}
+.books-info-title {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  /* 1줄 말줄임 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0.8rem 0;
+}
+.books-info-pirce {
+  font-size: 1.6rem;
+}
+.books-info-price em {
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: normal;
+}
+/* 이벤트 */
+.event {
+  padding-top: 3rem;
+  padding-bottom: 9rem;
+}
+.event .section-slide {
+  height: 35rem;
+}
+.sw-events {
+  height: 100%;
+}
+.events-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  background: #f7f7f7;
+}
+.events-link img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+/* 하단 */
+.footer {
+}
+.footer-menu {
+  border-top: 0.1rem solid #e5e5e5;
+  border-bottom: 0.1rem solid #e5e5e5;
+  padding: 1.5rem 0;
+}
+.footer-menu .inner {
+}
+.footer-menu-list {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-menu-list > li {
+  position: relative;
+}
+.footer-menu-list > li::after {
+  position: absolute;
+  top: 0.2;
+  right: -3.6rem;
+  content: "";
+  width: 0.1rem;
+  height: 1.2rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+.footer-menu-list > li:last-child::after {
+  content: none;
+}
+
+.footer-menu-list > li > a {
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  color: #333;
+  white-space: nowrap;
+}
+.footer-menu-list > li > a > strong {
+  font-weight: 700;
+}
+.footer-menu-list > li a i::before {
+  display: inline-block;
+  position: relative;
+  content: "";
+  width: 0.8rem;
+  height: 0.6rem;
+  background: url("../images/icon_arrow.svg") no-repeat center;
+  margin-left: 0.4rem;
+  vertical-align: 0.2rem;
+}
+.more-list {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  padding: 1.7rem;
+  background: #fff;
+  box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.8rem;
+}
+.footer-menu-list > li:hover .more-list {
+  display: block;
+}
+.more-list li {
+  margin-bottom: 1.6rem;
+}
+.more-list li:last-child {
+  margin-bottom: 0;
+}
+.more-list li a {
+  font-size: 1.3rem;
+  color: #333;
+  white-space: nowrap;
+}
+.footer-main {
+  padding-top: 3rem;
+  padding-bottom: 2.5rem;
+}
+.footer-main-left {
+  float: left;
+  width: 50%;
+  padding-right: 3rem;
+  border-right: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+.footer-main-right {
+  float: right;
+  width: 50%;
+  padding-left: 3rem;
+}
+.company-name {
+  float: left;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  margin-right: 1rem;
+}
+.company-info {
+  float: left;
+  width: 80%;
+}
+.company-info li {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.company-info li:last-child {
+  margin-bottom: 0;
+}
+.company-info li span {
+}
+.company-info li span.f-line::after {
+  display: inline-block;
+  position: relative;
+  content: "";
+  width: 0.1rem;
+  height: 1rem;
+  background: #b2b2b2;
+  vertical-align: -0.1rem;
+  margin: 0 0.3rem;
+}
+.company-info li a {
+  color: #666;
+}
+.company-info li a.line {
+  color: #4a95ff;
+  text-decoration: underline;
+}
+.company-info li b {
+  color: #111;
+  font-weight: 700;
+}
+.company-info li p {
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+/* caniuse.com 을 통해 확인한다. */
+.copy {
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  color: rgba(0, 0, 0, 0.4);
+}
