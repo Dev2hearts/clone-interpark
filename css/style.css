@@ -165,35 +165,37 @@ body {
   height: 11px;
   background: url("../images/icon_linkArrow.svg") no-repeat center;
 }
+
 @media screen and (max-width: 1280px) {
-  .sectoon-top {
+  .section-top {
   }
-  .sectoon-top > h2 {
+  .section-top > h2 {
   }
-  .sectoon-top > p {
+  .section-top > p {
   }
 }
 @media screen and (max-width: 1024px) {
-  .sectoon-top {
+  .section-top {
   }
-  .sectoon-top > h2 {
+  .section-top > h2 {
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 0;
   }
-  .sectoon-top > p {
+  .section-top > p {
     font-size: 15px;
     line-height: 18px;
   }
 }
 @media screen and (max-width: 760px) {
-  .sectoon-top {
+  .section-top {
   }
-  .sectoon-top > h2 {
+  .section-top > h2 {
   }
-  .sectoon-top > p {
+  .section-top > p {
   }
 }
+
 /* 플라잉 배너 */
 .fix-banner {
   position: fixed;
@@ -374,12 +376,14 @@ body {
 .mypage-list li a b {
   font-weight: 500;
 }
+
 .mb-mypage {
-  display: none;
   position: absolute;
   right: 10px;
   top: -5px;
+  display: none;
 }
+
 .header-down {
 }
 
@@ -439,7 +443,7 @@ body {
 
 @media screen and (max-width: 1024px) {
   .header {
-    border-bottom: 1px solid #f0f4f4;
+    border-bottom: 8px solid #f0f4f4;
   }
   .header .inner {
     padding-top: 15px;
@@ -450,6 +454,7 @@ body {
     height: 18px;
     margin-left: 15px;
   }
+
   .header-left {
     width: 100%;
   }
@@ -458,36 +463,41 @@ body {
     transform: translateX(-50%);
     top: 140px;
   }
+
   .member-list {
     display: none;
   }
   .mb-mypage {
     display: block;
   }
+
   .header-down {
     text-align: center;
   }
   .service-list {
     display: inline-block;
     float: none;
-    margin-top: 0;
+    margin-top: 0px;
   }
+
   .service-list li {
     padding-right: 20px;
   }
   .service-list li:last-child {
-    margin-right: 0;
+    margin-right: 0px;
   }
+
   .service-list li a {
     font-size: 12px;
     font-weight: 400;
   }
   .service-list li a img {
+    display: block;
     width: 48px;
     height: 48px;
-    display: block;
     margin: 0 auto;
   }
+
   .service-menu {
     display: none;
   }
@@ -502,10 +512,12 @@ body {
 .promotion .inner {
   height: 345px;
 }
+
 .promotion .section-top {
   display: none;
   margin-bottom: 20px;
 }
+
 .promotion-slide {
   height: 100%;
 }
@@ -518,35 +530,81 @@ body {
   width: 100%;
   height: auto;
 }
+.sw-promotion-control {
+  position: relative;
+  display: none;
+  text-align: center;
+}
+.sw-promotion-pg {
+  display: inline-block;
+}
+
 @media screen and (max-width: 1280px) {
-  .promotion .iner {
+  .promotion .inner {
     height: 275px;
   }
 }
 @media screen and (max-width: 1024px) {
   .promotion {
-    
   }
-  .promotion .iner {
-    height: 200px;
+  .promotion .inner {
+    height: 300px;
     border-bottom: 8px solid #f0f4f4;
   }
   .promotion .section-top {
     display: block;
   }
-  
+
   .promotion .sw-bt {
     display: none;
+  }
+
+  .sw-promotion-control {
+    display: block;
+  }
+  /* swiper.js에서 css 자동생성 */
+  .sw-promotion-control .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.2;
+    background-color: #000;
+  }
+  .sw-promotion-control .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #000;
   }
 }
 @media screen and (max-width: 760px) {
   .promotion .inner {
-    height: 190px;
+    height: 290px;
   }
   .sw-promotion {
+    /* 화면의 너비에 비해 줄어드는 것은 맞다  */
+    /* 하지만 일정 너비 이하로는 줄어들지 않았으면 좋겠다.  */
     width: 50%;
+    min-width: 350px;
+  }
+
+  .sw-promotion-control {
+    margin-top: -20px;
+    z-index: 999;
+  }
+  .sw-promotion-control .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0.2;
+    background-color: #fff;
+  }
+  .sw-promotion-control .swiper-pagination-bullet-active {
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+    background-color: #fff;
   }
 }
+
 /* 쇼핑추천 */
 .shopping {
   padding-top: 30px;
