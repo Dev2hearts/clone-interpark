@@ -91,10 +91,26 @@
         <div class="inner">
           <h2 class="fix-mypage-title">마이페이지를 선택해주세요.</h2>
           <ul class="fix-mypage-list clearfix">
-            <li><a href="#"><img src="images/icon_tour.png" alt="투어">투어 MY</a></li>
-            <li><a href="#"><img src="images/icon_ticket.png" alt="티켓">티켓 MY</a></li>
-            <li><a href="#"><img src="images/icon_shopping.png" alt="쇼핑">쇼핑 MY</a></li>
-            <li><a href="#"><img src="images/icon_book.png" alt="도서">도서 MY</a></li>
+            <li>
+              <a href="#"
+                ><img src="images/icon_tour.png" alt="투어" />투어 MY</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon_ticket.png" alt="티켓" />티켓 MY</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon_shopping.png" alt="쇼핑" />쇼핑 MY</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon_book.png" alt="도서" />도서 MY</a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -422,11 +438,12 @@
             <!-- Shopping Swiper -->
             <script>
               new Swiper(".sw-shopping", {
-                slidesPerView: 8,
+                slidesPerView: 5,
                 grid: {
                   rows: 2,
+                  fill: "row",
                 },
-                spaceBetween: 24,
+                spaceBetween: 10,
                 breakpoints: {
                   1024: {
                     spaceBetween: 32,
