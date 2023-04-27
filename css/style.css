@@ -44,6 +44,7 @@ body {
   .inner {
     padding: 0 20px;
     padding-bottom: 20px;
+
     max-width: 760px;
     border-bottom: 8px solid #f0f4f4;
   }
@@ -108,10 +109,12 @@ body {
   }
 }
 /* section 내용 구조 */
+
 .wrap > section {
   padding-top: 30px;
   padding-bottom: 90px;
 }
+
 .section-top {
   text-align: center;
 }
@@ -178,8 +181,9 @@ body {
 }
 
 @media screen and (max-width: 1280px) {
-  body > section {
+  .wrap > section {
   }
+
   .section-top {
   }
   .section-top > h2 {
@@ -203,6 +207,7 @@ body {
     font-size: 15px;
     line-height: 18px;
   }
+
   .bt-link-shop {
     display: block;
     font-size: 15px;
@@ -217,7 +222,7 @@ body {
   .section-top .btns a {
     line-height: 34px;
     padding: 0 14px;
-    margin-right: ;
+    margin-right: 5px;
   }
 }
 @media screen and (max-width: 760px) {
@@ -262,8 +267,8 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
+  background: #fff;
   z-index: 99;
-  background-color: #fff;
 }
 .quick-menu .inner {
   display: flex;
@@ -273,7 +278,7 @@ body {
 }
 .quick-menu a {
 }
-@media screen and (max-width: 1024) {
+@media screen and (max-width: 1024px) {
   .quick-menu {
     display: block;
   }
@@ -289,6 +294,7 @@ body {
   background: rgba(0, 0, 0, 0.6);
   z-index: 9999999;
 }
+
 .fix-mypage-main {
   position: absolute;
   left: 0;
@@ -317,6 +323,7 @@ body {
 .fix-mypage-list li:last-child {
   margin-right: 0;
 }
+
 .fix-mypage-list li a {
   font-size: 14px;
   color: #666;
@@ -327,11 +334,9 @@ body {
   margin: 0 auto;
   margin-bottom: 8px;
 }
-@media screen and (max-width: 1024px) {
-  /* .fix-mypage {
-    display: none;
-  } */
+@media screen and (max-width: 1280px) {
 }
+
 /* 기본레이아웃 */
 .wrap {
 }
@@ -671,19 +676,20 @@ body {
   .sw-promotion-control {
     display: block;
   }
-  /* swiper.js에서 css 자동생성 */
-  .sw-promotion-control .swiper-pagination-bullet {
+  /* swiper.js 에서 자동으로 css 생성 */
+  .sw-promotion-pg .swiper-pagination-bullet {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     opacity: 0.2;
     background-color: #000;
   }
-  .sw-promotion-control .swiper-pagination-bullet-active {
+  .sw-promotion-pg .swiper-pagination-bullet-active {
     opacity: 1;
     background-color: #000;
   }
 }
+
 @media screen and (max-width: 760px) {
   .promotion .inner {
     height: 290px;
@@ -699,17 +705,17 @@ body {
     margin-top: -20px;
     z-index: 999;
   }
-  .sw-promotion-control .swiper-pagination-bullet {
+  .sw-promotion-pg .swiper-pagination-bullet {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    opacity: 0.2;
+    opacity: 0.3;
     background-color: #fff;
   }
-  .sw-promotion-control .swiper-pagination-bullet-active {
+  .sw-promotion-pg .swiper-pagination-bullet-active {
+    opacity: 1;
     width: 8px;
     height: 8px;
-    opacity: 1;
     background-color: #fff;
   }
 }
@@ -788,31 +794,28 @@ body {
 
 @media screen and (max-width: 1280px) {
 }
-
 @media screen and (max-width: 1024px) {
   .good-info {
     padding: 10px;
   }
 }
-
 @media screen and (max-width: 800px) {
-  .good-info {
-    padding: 10px;
-  }
   .good-info-list li b {
     font-size: 15px;
     line-height: 18px;
     white-space: nowrap;
   }
-}
-
-@media screen and (max-width: 760px) {
   .good-info {
-    padding: 5px;
+    padding: 10px;
   }
+}
+@media screen and (max-width: 760px) {
   .good-info-list li b {
     font-size: 12px;
     line-height: 18px;
+  }
+  .good-info {
+    padding: 5px;
   }
   .good-info-list li p {
     font-size: 13px;
@@ -820,6 +823,7 @@ body {
     height: 32px;
   }
 }
+
 /* 투어특가 */
 .tour {
   padding-top: 30px;
@@ -827,7 +831,7 @@ body {
 }
 
 .tour .section-slide {
-  height: 355px;
+  /* height: 355px; */
 }
 .sw-tour {
   height: 100%;
@@ -843,7 +847,14 @@ body {
 .tour-img {
   position: relative;
   width: 100%;
-  height: 245px;
+
+  /* 1280px 일때 높이가 245 px 이다. */
+  /* 1280px 이 100vw 라면  */
+  /* 245px 은 몇 vw 일까? */
+  /*  245 / 1280 * 100  */
+  max-height: 245px;
+  height: 19.14vw;
+
   overflow: hidden;
 }
 .tour-img img {
@@ -852,7 +863,7 @@ body {
   top: 50%;
   left: 50%;
   /* 좌표, 영역말고 내용 즉, 보이는 부분만 이동 */
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.3);
 
   width: 100%;
 }
@@ -901,6 +912,34 @@ body {
 .tour-price b {
   font-weight: 700;
   font-size: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .tour-img {
+    /* height: 138px; */
+  }
+  .tour-info {
+    padding: 10px;
+  }
+  .tour-cate {
+    top: -22px;
+    line-height: 22px;
+    padding: 0 7px;
+    border-radius: 4px;
+  }
+  .tour-title {
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .tour-price {
+    font-size: 15px;
+  }
+  .tour-price b {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+@media screen and (max-width: 760px) {
 }
 
 /* 티켓랭킹 */
