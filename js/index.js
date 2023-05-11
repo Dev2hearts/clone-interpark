@@ -10,7 +10,8 @@ window.onload = function () {
         window.scrollTo({
             top: 0,
             behavior: "smooth",
-        });sc
+        });
+        sc;
     });
     // <!--Initialize Swiper -->
     let promotionSwiper = new Swiper(".sw-promotion", {
@@ -45,6 +46,10 @@ window.onload = function () {
             fill: "row",
         },
         spaceBetween: 10,
+        navigation: {
+            nextEl: ".promotion .sw-next",
+            prevEl: ".promotion .sw-prev",
+        },
         breakpoints: {
             1024: {
                 spaceBetween: 32,
@@ -74,6 +79,10 @@ window.onload = function () {
             fill: "row",
         },
         spaceBetween: 10,
+        navigation: {
+            nextEl: ".promotion .sw-next",
+            prevEl: ".promotion .sw-prev",
+        },
         breakpoints: {
             1024: {
                 spaceBetween: 32,
@@ -99,6 +108,29 @@ window.onload = function () {
     let ticketSwiper = new Swiper(".sw-ticket", {
         slidesPerView: "auto",
         spaceBetween: 10,
+        navigation: {
+            nextEl: ".promotion .sw-next",
+            prevEl: ".promotion .sw-prev",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+            },
+            1280: {
+                slidesPerView: 4,
+                spaceBetween: 27,
+            },
+        },
+    });
+    // live slider
+    let liveSwiper = new Swiper(".sw-live", {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".promotion .sw-next",
+            prevEl: ".promotion .sw-prev",
+        },
         breakpoints: {
             1024: {
                 slidesPerView: 3,
@@ -118,6 +150,10 @@ window.onload = function () {
             fill: "row",
         },
         spaceBetween: 19,
+        navigation: {
+            nextEl: ".promotion .sw-next",
+            prevEl: ".promotion .sw-prev",
+        },
         breakpoints: {
             1024: {
                 slidesPerView: 3,
@@ -141,6 +177,10 @@ window.onload = function () {
     let eventsSwiper = new Swiper(".sw-events", {
         slidesPerView: 3,
         spaceBetween: 27,
+        navigation: {
+            nextEl: ".promotion .sw-next",
+            prevEl: ".promotion .sw-prev",
+        },
         breakpoints: {
             1280: {
                 slidesPerView: 4,
