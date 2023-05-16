@@ -1,0 +1,13 @@
+{
+    "totalCount": 10,
+    "good_1": { "link": "#", "pic": "book1.jpg", "alt": "book1", "title": "New 대한민국 청약지도", "price": "18,000" },
+    "good_2": { "link": "#", "pic": "book2.jpg", "alt": "book2", "title": "New 대한민국 청약지도", "price": "18,000" },
+    "good_3": { "link": "#", "pic": "book3.jpg", "alt": "book3", "title": "New 대한민국 청약지도", "price": "18,000" },
+    "good_4": { "link": "#", "pic": "book4.jpg", "alt": "book4", "title": "New 대한민국 청약지도", "price": "18,000" },
+    "good_5": { "link": "#", "pic": "book5.jpg", "alt": "book5", "title": "New 대한민국 청약지도", "price": "18,000" },
+    "good_6": { "link": "#", "pic": "book1.jpg", "alt": "book6", "title": "New 대한민국 청약지도", "price": "18,000" },
+    "good_7": { "link": "#", "pic": "book2.jpg", "alt": "book7", "title": "New 대한민국 청약지도", "price": "18,000" },
+    "good_8": { "link": "#", "pic": "book3.jpg", "alt": "book8", "title": "New 대한민국 청약지도", "price": "18,000" },
+    "good_9": { "link": "#", "pic": "book4.jpg", "alt": "book9", "title": "New 대한민국 청약지도", "price": "18,000" },
+    "good_10": { "link": "#", "pic": "book5.jpg", "alt": "book10", "title": "New 대한민국 청약지도", "price": "18,000" }
+}

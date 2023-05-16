@@ -1,0 +1,11 @@
+{
+    "totalCount": 8,
+    "good_1": { "link": "#", "pic": "banner1.jpg", "alt": "이벤트1" },
+    "good_2": { "link": "#", "pic": "banner2.jpg", "alt": "이벤트2" },
+    "good_3": { "link": "#", "pic": "banner3.jpg", "alt": "이벤트3" },
+    "good_4": { "link": "#", "pic": "banner4.jpg", "alt": "이벤트4" },
+    "good_5": { "link": "#", "pic": "banner1.jpg", "alt": "이벤트5" },
+    "good_6": { "link": "#", "pic": "banner2.jpg", "alt": "이벤트6" },
+    "good_7": { "link": "#", "pic": "banner3.jpg", "alt": "이벤트7" },
+    "good_8": { "link": "#", "pic": "banner4.jpg", "alt": "이벤트8" }
+}
