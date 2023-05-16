@@ -35,8 +35,8 @@ window.onload = function () {
     // pordata.json 을 불러와서 배치한다.
     let data;
     const proXhttp = new XMLHttpRequest();
-    proXhttp.onreadystatechange = function (event) {
-        let req = event.target;
+    proXhttp.onreadystatechange = function (ew) {
+        let req = e.target;
         if (req.readyState === XMLHttpRequest.DONE) {
             // console.log(req.response);
             // 현재 전달된 문자들언 json 이 아닙니다.
