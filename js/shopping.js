@@ -109,6 +109,12 @@ window.addEventListener("load", function () {
         btns[i].onclick = function (event) {
             event.preventDefault();
             parseShopping(cateName[i]);
+            for (let j = 0; j < btns.length; j++) {
+                btns[j].classList.remove("btns-active");
+            }
+            // 포커스 적용
+            this.classList.add("btns-active");
         };
     }
+    btns[0].classList.add("btns-active");
 });

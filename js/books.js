@@ -39,8 +39,13 @@ window.addEventListener("load", function () {
         for (let i = 0; i < _data.books.length; i++) {
             aTags[i].onclick = function (e) {
                 e.preventDefault();
+                for (let j = 0; j < aTags.length; j++) {
+                    aTags[j].classList.remove("btns-active");
+                }
                 makeList(i);
+                this.classList.add("btns-active");
             };
+            aTags[0].classList.add("btns-active");
         }
         makeList(0);
     }

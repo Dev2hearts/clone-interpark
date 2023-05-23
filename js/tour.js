@@ -99,11 +99,29 @@ window.addEventListener("load", function () {
         });
     }
     const btns = this.document.querySelectorAll(".tour .btns a");
-    let cateName = ["망설이면 품절", "패키지", "국내숙소", "해외숙소"];
-    for (let i = 0; i < cateName.length; i++) {
-        btns[i].onclick = function (event) {
-            event.preventDefault();
-            parseTour(cateName[i]);
+    // let cateName = ["망설이면 품절", "패키지", "국내숙소", "해외숙소"];
+    // for (let i = 0; i < cateName.length; i++) {
+    //     btns[i].onclick = function (event) {
+    //         event.preventDefault();
+    //         parseTour(cateName[i]);
+    //         for (let j = 0; j < btns.length; j++) {
+    //             btns[j].classList.remove("btns-active");
+    //         }
+    //         // 포커스 적용
+    //         this.classList.add("btns-active");
+    //     };
+    // }
+
+    btns.forEach((btn) => {
+        btn.onclick = (e) => {
+            e.preventDefault();
+            parseTour(btn.innerHTML);
+            btns.forEach((btn) => {
+                btn.classList.remove("btns-active");
+            });
+            btn.classList.add("btns-active");
         };
-    }
+    });
+
+    btns[0].classList.add("btns-active");
 });
