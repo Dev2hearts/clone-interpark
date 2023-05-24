@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
     <div class="swiper-slide">
                                 <a href="${obj.link}" class="live-link">
                                     <div class="live-img">
-                                        <img src="images/${obj.pic}" alt="${obj.lat}" />
+                                        <img src="images/${obj.pic}" alt="${obj.alt}" />
                                     </div>
                                     <div class="live-info">
                                         <div class="live-info-top">
@@ -31,12 +31,12 @@ window.addEventListener("load", function () {
                                             <p class="live-info-time">${obj.time}</p>
                                         </div>
                                         <div class="live-info-bottom clearfix">
-                                            <div class="live-info-thumb">
-                                                <img src="images/${obj.pic}" alt="${obj.alt}" />
+                                            <div class="live-info-thumb" ${obj.thumbImg ? "style=display:ineline-block" : "style=display:none"}>
+                                                <img src="images/${obj.thumbImg}" alt="${obj.thumbAlt}" />
                                             </div>
                                             <div class="live-info-desc">
                                                 <p class="live-info-desc-title">${obj.descTitle}</p>
-                                                <p class="live-info-desc-price"><em>${obj.ratio}%</em> <b>${obj.price}</b>원</p>
+                                                <p class="live-info-desc-price"${obj.ratio ? "style=display:ineline-block" : "style=display:none"}><em>${obj.ratio}%</em> <b>${obj.price}</b>원</p>
                                             </div>
                                         </div>
                                     </div>

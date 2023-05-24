@@ -53,7 +53,7 @@
         "thumbImg": "",
         "thumbAlt": "",
         "descTitle": "",
-        "ratio": 0,
+        "ratio": "",
         "price": ""
     },
     "live_5": {
@@ -67,7 +67,7 @@
         "thumbImg": "live5-1.png",
         "thumbAlt": "인터파크다",
         "descTitle": "80일간의 세계일주 프로모션",
-        "ratio": 0,
+        "ratio": "",
         "price": ""
     },
     "live_6": {
@@ -81,7 +81,7 @@
         "thumbImg": "live6-1.jpg",
         "thumbAlt": "수요아트살롱",
         "descTitle": "수요아트살롱이란?",
-        "ratio": 0,
+        "ratio": "",
         "price": ""
     }
 }
