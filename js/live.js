@@ -1,17 +1,21 @@
 window.addEventListener("load", function () {
     // 라이브 슬라이더
     let liveData;
-    const liveXhttp = new XMLHttpRequest();
-    liveXhttp.onreadystatechange = function (e) {
-        let req = e.target;
-        if (req.readyState === XMLHttpRequest.DONE) {
-            liveData = JSON.parse(req.response);
-            makeLiveSlide();
-        }
-    };
-    liveXhttp.open("GET", "data/livedata.json");
-    liveXhttp.send();
-    function makeLiveSlide() {
+    // const liveXhttp = new XMLHttpRequest();
+    // liveXhttp.onreadystatechange = function (e) {
+    //     let req = e.target;
+    //     if (req.readyState === XMLHttpRequest.DONE) {
+    //         liveData = JSON.parse(req.response);
+    //         makeLiveSlide();
+    //     }
+    // };
+    // liveXhttp.open("GET", "data/livedata.json");
+    // liveXhttp.send();
+    fetch("data/livedata.json")
+        .then((res) => res.json())
+        .then((result) => makeLiveSlide(result))
+        .catch((err) => console.log(err));
+    function makeLiveSlide(liveData) {
         let swLiveHtml = ``;
         for (let i = 0; i < liveData.live_count; i++) {
             let obj = liveData[`live_${i + 1}`];

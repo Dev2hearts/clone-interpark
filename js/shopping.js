@@ -10,27 +10,45 @@ window.addEventListener("load", function () {
     // 메뉴 실행시 쇼핑 몰록 slide 변경
 
     function parseShopping(_cate) {
-        let xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function (event) {
-            let req = event.target;
-            if (req.readyState === XMLHttpRequest.DONE) {
-                let data = JSON.parse(req.response);
-                makeShoppingSlide(data);
-            }
-        };
+        // let xhr = new XMLHttpRequest();
+        // xhr.onreadystatechange = function (event) {
+        //     let req = event.target;
+        //     if (req.readyState === XMLHttpRequest.DONE) {
+        //         let data = JSON.parse(req.response);
+        //         makeShoppingSlide(data);
+        //     }
+        // };
 
         // 전달된 매개변수 _menu 에 따라서
         // 관련된 json 데이터를 불러들이고,
         if (_cate === "쎈딜") {
-            xhr.open("GET", "data/shoppingdata.json");
+            fetch("data/shoppingdata.json")
+                .then((res) => res.json())
+                .then((result) => makeShoppingSlide(result))
+                .catch((err) => console.log(err));
+            // xhr.open("GET", "data/shoppingdata.json");
         } else if (_cate === "베스트") {
-            xhr.open("GET", "data/shoppingdata1.json");
-        } else if (_cate === "오늘만특가") {
-            xhr.open("GET", "data/shoppingdata2.json");
-        } else if (_cate === "어린이날") {
-            xhr.open("GET", "data/어린이날.json");
+            fetch("data/shoppingdata1.json")
+                .then((res) => res.json())
+                .then((result) => makeShoppingSlide(result))
+                .catch((err) => console.log(err));
         }
-        xhr.send();
+        // xhr.open("GET", "data/shoppingdata1.json");
+        else if (_cate === "오늘만특가") {
+            fetch("data/shoppingdata2.json")
+                .then((res) => res.json())
+                .then((result) => makeShoppingSlide(result))
+                .catch((err) => console.log(err));
+            // xhr.open("GET", "data/shoppingdata2.json");
+        } else if (_cate === "어린이날") {
+            this.fetch("data/어린이날.json")
+                .then((res) => res.json())
+                .then((result) => makeShoppingSlide(result))
+                .catch((err) => console.log(err));
+
+            // xhr.open("GET", "data/어린이날.json");
+        }
+        // xhr.send();
 
         // html 을 만들어서
         // slide 를 만들어준다.
